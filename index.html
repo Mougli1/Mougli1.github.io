@@ -3,15 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Titre de la page</title>
+  <title>Page stylée pour les hackers</title>
   <style>
     /* Styles pour le corps de la page */
     body {
-      font-family: sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #000;
+      color: #00ff00;
       margin: 0;
       padding: 0;
+    }
+
+    /* Styles pour la barre de navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ff00;
+      text-decoration: none;
+    }
+
+    .navbar-brand:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-link {
+      color: #00ff00;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    .navbar-link:hover {
+      text-decoration: none;
+      color: #fff;
     }
 
     /* Styles pour le contenu principal */
@@ -27,7 +64,7 @@
 
     /* Styles pour les liens */
     a {
-      color: #0066cc;
+      color: #00ff00;
       text-decoration: none;
     }
 
@@ -39,24 +76,123 @@
     .btn {
       display: inline-block;
       padding: 0.5rem 1rem;
-      background-color: #0066cc;
-      color: #fff;
+      background-color: #00ff00;
+      color: #000;
       border-radius: 4px;
       text-decoration: none;
       transition: background-color 0.2s;
+      cursor: pointer;
     }
 
     .btn:hover {
-      background-color: #004a99;
+      background-color: #fff;
+      color: #000;
     }
+
+    /* Styles pour le formulaire de connexion */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #333;
+      border-radius: 4px;
+    }
+
+    .login-form label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    .login-form input[type="submit"] {
+      padding: 0.5rem 1rem;
+      background-color: #00ff00;
+      color: #000;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+
+    .login-form
+    .login-form input[type="submit"]:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Styles pour le menu déroulant */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #333;
+  min-width: 160px;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #00ff00;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #00ff00;
+  color: #000;
+}
   </style>
 </head>
 <body>
+  <!-- Barre de navigation -->
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">HackerPage</a>
+    <div class="navbar-menu">
+      <a href="#" class="navbar-link">Accueil</a>
+      <a href="#" class="navbar-link">À propos</a>
+      <div class="dropdown">
+        <a href="#" class="navbar-link">Plus</a>
+        <div class="dropdown-content">
+          <a href="#">Option 1</a>
+          <a href="#">Option 2</a>
+          <a href="#">Option 3</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Contenu principal -->
   <div class="container">
-    <h1>Titre principal de la page</h1>
-    <p>Paragraphe de contenu principal.</p>
-    <a href="#">Lien vers une autre page</a>
-    <button class="btn">Bouton</button>
+    <h1>Bienvenue sur HackerPage</h1>
+    <p>Cette page est dédiée à tous les hackers en herbe qui veulent apprendre les rudiments de l'informatique.</p>
+    <h2>Connectez-vous pour accéder au contenu</h2>
+    <form class="login-form" action="#" method="post">
+      <label for="username">Nom d'utilisateur:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Se connecter" class="btn">
+    </form>
+    <p>Pas encore inscrit? <a href="#">Cliquez ici</a> pour vous inscrire.</p>
   </div>
 </body>
 </html>
+```
