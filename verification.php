@@ -1,11 +1,15 @@
 <?php
-// Vérifier les informations de connexion
-if ($_POST['identifiant'] == 'pipi' && $_POST['motdepasse'] == 'caca') {
-	// Informations de connexion correctes, afficher la page "bravo"
-	echo '<h1>Bravo !</h1>';
-} else {
-	// Informations de connexion incorrectes, demander à l'utilisateur de réessayer
-	echo '<h1>Identifiant ou mot de passe incorrect</h1>';
-	echo '<a href="index.html">Réessayer</a>';
+// Vérification de l'identifiant et du mot de passe
+$identifiant_valide = "pipi";
+$motdepasse_valide = "caca";
+
+if (isset($_POST['identifiant']) && isset($_POST['motdepasse'])) {
+	if ($_POST['identifiant'] === $identifiant_valide && $_POST['motdepasse'] === $motdepasse_valide) {
+		// Identifiant et mot de passe corrects, afficher la page "bravo"
+		header("Location: bravo.html");
+		exit();
+	} else {
+		// Identifiant ou mot de passe incorrect, afficher un message d'erreur
+		echo "Identifiant ou mot de passe incorrect. Veuillez réessayer.";
+	}
 }
-?>
