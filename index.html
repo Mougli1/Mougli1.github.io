@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Connexion</title>
-</head>
-<body>
-	<h2>Connexion</h2>
-	<form action="verification.php" method="POST">
-		<label for="identifiant">Identifiant :</label>
-		<input type="text" id="identifiant" name="identifiant"><br><br>
-		<label for="motdepasse">Mot de passe :</label>
-		<input type="password" id="motdepasse" name="motdepasse"><br><br>
-		<input type="submit" value="Se connecter">
-	</form>
-</body>
+  <head>
+    <title>Décompte de temps</title>
+    <script>
+      // Calculer la date future dans 4 mois
+      var date_future = new Date();
+      date_future.setMonth(date_future.getMonth() + 4);
+
+      // Mettre à jour l'élément HTML toutes les secondes
+      setInterval(function() {
+        // Obtenir la date et l'heure actuelles
+        var maintenant = new Date();
+
+        // Calculer le temps restant jusqu'à la date future
+        var temps_restant = date_future - maintenant;
+
+        // Afficher le temps restant dans l'élément HTML
+        document.getElementById("temps_restant").innerHTML = temps_restant;
+      }, 1000); // Mettre à jour toutes les secondes
+    </script>
+  </head>
+  <body>
+    <h1>Décompte de temps dans 4 mois :</h1>
+    <div id="temps_restant"></div>
+  </body>
 </html>
